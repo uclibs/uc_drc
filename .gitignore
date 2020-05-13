@@ -16,8 +16,28 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+dump.rdb
+vendor/*.csv
 
 /node_modules
 /yarn-error.log
 
+
+# Ignore Byebug command history file.
 .byebug_history
+
+coverage/*
+
+##Mac OS
+.DS_Store
+
+# Application files to ingore
+fits.log
+
+# Ignore dotenv config files
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore compiled assets
+public/**
