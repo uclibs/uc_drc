@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Hyrax.config do |config|
   # Injected via `rails g hyrax:work Item`
   config.register_curation_concern :item
@@ -254,7 +256,7 @@ Hyrax.config do |config|
     if defined? BrowseEverything
       config.browse_everything = BrowseEverything.config
     else
-      Rails.logger.warn "BrowseEverything is not installed"
+      Rails.logger.warn 'BrowseEverything is not installed'
     end
   rescue Errno::ENOENT
     config.browse_everything = nil
@@ -277,7 +279,7 @@ Hyrax.config do |config|
   # config.whitelisted_ingest_dirs = []
 end
 
-Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
+Date::DATE_FORMATS[:standard] = '%m/%d/%Y'
 
 Qa::Authorities::Local.register_subauthority('subjects', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('languages', 'Qa::Authorities::Local::TableBasedAuthority')
