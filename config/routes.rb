@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
   end
-
   devise_for :users
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'
@@ -31,6 +30,5 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
