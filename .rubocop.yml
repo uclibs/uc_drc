@@ -36,3 +36,4 @@ Style/MixinUsage:
     - 'bin/setup'
     - 'bin/update'
     - 'spec/features/create_item_spec.rb'
+

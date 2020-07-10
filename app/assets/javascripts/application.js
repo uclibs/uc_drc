@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= 
+//= require activestorage
 //= require turbolinks
 //
 // Required by Blacklight
