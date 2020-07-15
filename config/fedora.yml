@@ -1,15 +1,18 @@
 development:
   user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://127.0.0.1:<%= ENV['FCREPO_DEVELOPMENT_PORT'] || 8984 %>/rest
+  password: <%= ENV["UC_DRC_FEDORA_PASSWORD"] %>
+  url: <%= ENV["UC_DRC_FEDORA_URL"] %>
   base_path: /dev
+  request: { timeout: 600, open_timeout: 60}
 test:
   user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://127.0.0.1:<%= ENV['FCREPO_TEST_PORT'] || 8986 %>/rest
+  password: <%= ENV["UC_DRC_FEDORA_PASSWORD"] %>
+  url: <%= ENV["UC_DRC_FEDORA_URL"] %>
   base_path: /test
+  request: { timeout: 600, open_timeout: 60}
 production:
   user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://127.0.0.1:8983/fedora/rest
+  password: <%= ENV["UC_DRC_FEDORA_PASSWORD"] %>
+  url: <%= ENV["UC_DRC_FEDORA_URL"] %>
   base_path: /prod
+  request: { timeout: 600, open_timeout: 60}

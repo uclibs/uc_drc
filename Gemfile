@@ -76,6 +76,7 @@ gem 'jquery-rails'
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
 end
