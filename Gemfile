@@ -60,6 +60,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'coveralls'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -78,6 +79,7 @@ gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 group :development, :test do
   gem 'dotenv-rails'
   gem 'fcrepo_wrapper'
+  gem 'rspec_junit_formatter'
   gem 'rspec-rails'
 end
 
