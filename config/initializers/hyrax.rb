@@ -35,7 +35,7 @@ Hyrax.config do |config|
   # config.max_notifications_for_dashboard = 5
 
   # How frequently should a file be fixity checked
-  # config.max_days_between_fixity_checks = 7
+  config.max_days_between_fixity_checks = ENV["FIXITY_MAX_DAYS"].to_i
 
   # Options to control the file uploader
   # config.uploader = {
@@ -47,15 +47,15 @@ Hyrax.config do |config|
   # Enable displaying usage statistics in the UI
   # Defaults to false
   # Requires a Google Analytics id and OAuth2 keyfile.  See README for more info
-  # config.analytics = false
+  config.analytics = ENV["UC_DRC_ANALYTICS_TOGGLE"]
 
   # Google Analytics tracking ID to gather usage statistics
-  # config.google_analytics_id = 'UA-99999999-1'
+  config.google_analytics_id = ENV["UC_DRC_ANALYTICS_ID"]
 
   # Date you wish to start collecting Google Analytic statistics for
   # Leaving it blank will set the start date to when ever the file was uploaded by
   # NOTE: if you have always sent analytics to GA for downloads and page views leave this commented out
-  # config.analytic_start_date = DateTime.new(2014, 9, 10)
+  config.analytic_start_date = DateTime.new(2020, 7, 10)
 
   # Enables a link to the citations page for a work
   # Default is false
@@ -81,7 +81,7 @@ Hyrax.config do |config|
   # config.noid_minter_class = Noid::Rails::Minter::Db
 
   # Store identifier minter's state in a file for later replayability
-  # config.minter_statefile = '/tmp/minter-state'
+  config.minter_statefile = ENV["UC_DRC_MINTER_STATE_FILE"]
 
   # Prefix for Redis keys
   # config.redis_namespace = "hyrax"
@@ -90,7 +90,7 @@ Hyrax.config do |config|
   # config.fits_path = "fits.sh"
 
   # Path to the file derivatives creation tool
-  # config.libreoffice_path = "soffice"
+  config.libreoffice_path = ENV["UC_DRC_SOFFICE_PATH"]
 
   # Option to enable/disable full text extraction from PDFs
   # Default is true, set to false to disable full text extraction
@@ -180,12 +180,12 @@ Hyrax.config do |config|
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
   # These must be lambdas that return a Pathname. Can be configured separately
-  #  config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
-  #  config.cache_path = ->() { Rails.root + 'tmp' + 'uploads' + 'cache' }
+  config.upload_path = ->() { Pathname(ENV["UC_DRC_UPLOAD_PATH"]) }
+  config.cache_path = ->() { Pathname(ENV["UC_DRC_CACHE_PATH"]) }
 
   # Location on local file system where derivatives will be stored
   # If you use a multi-server architecture, this MUST be a shared volume
-  # config.derivatives_path = Rails.root.join('tmp', 'derivatives')
+  config.derivatives_path = ENV["UC_DRC_DERIVATIVES_PATH"]
 
   # Should schema.org microdata be displayed?
   # config.display_microdata = true
@@ -197,7 +197,7 @@ Hyrax.config do |config|
   # Location on local file system where uploaded files will be staged
   # prior to being ingested into the repository or having derivatives generated.
   # If you use a multi-server architecture, this MUST be a shared volume.
-  # config.working_path = Rails.root.join( 'tmp', 'uploads')
+  config.working_path = Pathname(ENV["UC_DRC_UPLOAD_PATH"])
 
   # Should the media display partial render a download link?
   # config.display_media_download_link = true

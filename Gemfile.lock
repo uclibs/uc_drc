@@ -181,6 +181,10 @@ GEM
     devise-guests (0.7.0)
       devise
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     dropbox_api (0.1.18)
       faraday (<= 1.0)
       oauth2 (~> 1.1)
@@ -820,6 +824,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-guests (~> 0.6)
+  dotenv-rails
   fcrepo_wrapper
   hyrax (= 2.8.0)
   jbuilder (~> 2.5)
