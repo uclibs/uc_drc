@@ -46,8 +46,8 @@ RSpec.feature 'Create a Item', js: false do
       expect(page).to have_content 'Add files'
       expect(page).to have_content 'Add folder'
       within('span#addfiles') do
-        attach_file('files[]', "spec/fixtures/image.jp2", visible: false)
-        attach_file('files[]', "spec/fixtures/jp2_fits.xml", visible: false)
+        attach_file('files[]', 'spec/fixtures/image.jp2', visible: false)
+        attach_file('files[]', 'spec/fixtures/jp2_fits.xml', visible: false)
       end
       click_link 'Descriptions' # switch tab
       fill_in('Title', with: 'My Test Work')

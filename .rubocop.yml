@@ -3,6 +3,7 @@ AllCops:
   TargetRubyVersion: 2.6
   Exclude:
     - 'db/**/*'
+    - 'vendor/**/*'
 Layout/LineLength:
   Max: 181
 Metrics/BlockLength:
