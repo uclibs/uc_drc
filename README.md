@@ -46,7 +46,7 @@
 1. Run the test suite: ```bundle exec rake spec```
 
 ## Docker
-See [hyrax-docker readme](hyrax-docker) for docker build/configuration.
+See [hyrax-docker readme](https://github.com/uclibs/hyrax-docker) for docker build/configuration.
 
 ## Project Samvera
 This software has been developed by and is brought to you by the Samvera community. Learn more at the
