@@ -35,9 +35,6 @@ gem 'redis', '~> 3.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -79,6 +76,11 @@ gem 'jquery-rails'
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 group :development, :test do
+  # Use Capistrano for deployment
+  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano-bundler', '~> 1.6', require: false
+  gem 'capistrano-rails', '~> 1.3', require: false
+  gem 'capistrano-rvm', require: false
   gem 'dotenv-rails'
   gem 'fcrepo_wrapper'
   gem 'rspec_junit_formatter'
