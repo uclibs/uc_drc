@@ -654,7 +654,7 @@ GEM
       rdf (~> 3.1)
     redic (1.5.3)
       hiredis
-    redis (3.3.5)
+    redis (4.1.4)
     redis-namespace (1.7.0)
       redis (>= 3.0.4)
     redlock (1.2.0)
@@ -861,7 +861,7 @@ DEPENDENCIES
   mysql2
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.3)
-  redis (~> 3.0)
+  redis (~> 4.1.0)
   riiif (~> 2.0)
   rsolr (>= 1.0, < 3)
   rspec-rails
