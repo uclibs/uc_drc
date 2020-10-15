@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+require 'sidekiq/api'
+
 Rails.application.routes.draw do
   # Bypass Riiif if custom image server present
   unless ENV['UC_DRC_IIIF_SERVER_URL'].present?
@@ -20,6 +23,10 @@ Rails.application.routes.draw do
   root 'hyrax/homepage#index'
   curation_concerns_basic_routes
   concern :exportable, Blacklight::Routes::Exportable.new
+
+  authenticate :user, ->(u) { u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
