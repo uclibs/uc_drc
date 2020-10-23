@@ -21,6 +21,8 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require blacklight/blacklight
 
+// Required by AllinsonFlex
+//= require allinson_flex/application
 //= require_tree .
 //= require hyrax
 

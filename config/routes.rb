@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount AllinsonFlex::Engine, at: '/'
   # Bypass Riiif if custom image server present
   unless ENV['UC_DRC_IIIF_SERVER_URL'].present?
     mount Riiif::Engine => 'images', as: :riiif if Hyrax.config.iiif_image_server?

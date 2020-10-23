@@ -143,7 +143,7 @@ Hyrax.config do |config|
   # Returns a URL that resolves to an image provided by a IIIF image server
   config.iiif_image_url_builder = lambda do |file_id, base_url, size|
     if ENV['UC_DRC_IIIF_SERVER_URL'].present?
-      iiifurl = ENV['UC_DRC_IIIF_SERVER_URL'] + file_id.gsub('/', '%2F') + '/full/' + size + '/0/default.jpg'
+      iiifurl = "#{ENV['UC_DRC_IIIF_SERVER_URL']}#{file_id.gsub('/', '%2F')}/full/#{size}/0/default.jpg"
       Rails.logger.debug "event: iiif_image_request: #{iiifurl}"
       iiifurl
     else
