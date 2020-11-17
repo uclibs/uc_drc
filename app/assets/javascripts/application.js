@@ -23,4 +23,4 @@
 
 //= require_tree .
 //= require hyrax
-
+//= require allinson_flex/application
