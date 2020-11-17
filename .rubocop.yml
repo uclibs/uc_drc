@@ -4,6 +4,12 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'vendor/**/*'
+    - 'node_modules/node-sass/src/libsass/contrib/libsass.spec'
+GlobalVars:
+  AllowedVariables:
+    - $CFLAGS
+    - $LIBS
+
 Layout/LineLength:
   Max: 181
 Metrics/BlockLength:
