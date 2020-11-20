@@ -24,6 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Allinson Flex Metadata Profile
 gem 'allinson_flex', git: 'https://github.com/samvera-labs/allinson_flex.git'
+gem 'database_cleaner'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
