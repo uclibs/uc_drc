@@ -46,6 +46,7 @@ Style/Documentation:
     - 'lib/extensions/allinson_flex/prepend_admin_set_form.rb'
     - 'lib/extensions/allinson_flex/prepend_permission_template_form.rb'
     - 'lib/extensions/allinson_flex/prepend_permission_templates_controller.rb'
+    - 'app/presenters/hyrax/item_presenter.rb'
 Style/MixinUsage:
   Exclude:
     - 'bin/setup'

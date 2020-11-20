@@ -185,6 +185,7 @@ GEM
       thor (>= 0.19.4, < 2.0)
       tins (~> 1.6)
     crass (1.0.6)
+    database_cleaner (1.8.5)
     declarative (0.0.20)
     declarative-option (0.1.0)
     deprecation (1.0.0)
@@ -894,6 +895,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   coveralls
+  database_cleaner
   devise
   devise-guests (~> 0.6)
   dotenv-rails
