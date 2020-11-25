@@ -3,6 +3,8 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'database_cleaner'
+require 'simplecov'
+SimpleCov.start
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
@@ -43,7 +45,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  # Needed for Allinson Flex
+  # Needed for Allinson Flex Metadata
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
     AdminSet.find_or_create_default_admin_set_id
