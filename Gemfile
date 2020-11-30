@@ -27,6 +27,10 @@ gem 'allinson_flex', git: 'https://github.com/samvera-labs/allinson_flex.git'
 gem 'database_cleaner'
 gem 'simplecov', require: false, group: :test
 
+# BulkRAX Egress Tool
+gem 'bulkrax', git: 'https://github.com/samvera-labs/bulkrax.git'
+gem 'factory_bot_rails'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -94,3 +98,5 @@ end
 
 gem 'react-rails'
 gem 'webpacker'
+
+gem 'willow_sword', github: 'notch8/willow_sword'
