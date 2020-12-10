@@ -18,12 +18,12 @@ if [ "$1" = 'server' ]; then
 
     if [ -f /opt/hyrax/tmp/pids/server.pid ]; then
         echo "Stopping Rails Server and Removing PID File"
-        ps aux |grep -i [r]ails | awk '{print $2}' | xargs kill -9
+        #ps aux |grep -i [r]ails | awk '{print $2}' | xargs kill -9
         rm -rf /opt/hyrax/tmp/pids/server.pid
     fi
 
     echo "Copy over Docker env variables"
-    /bin/cp -f .env.development.docker .env.development
+    /bin/cp -f .env.development.docker .env.development.local
 
     echo "Install bundler"
     gem install bundler:2.0.2
@@ -62,7 +62,7 @@ elif [[ $1 = sidekiq* ]]; then
     fi
 
     echo "Copy over Docker env variables"
-    /bin/cp -f .env.development.docker .env.development
+    /bin/cp -f .env.development.docker .env.development.local
 
     echo "Install bundler"
     gem install bundler:2.0.2

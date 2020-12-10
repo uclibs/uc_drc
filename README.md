@@ -1,9 +1,8 @@
-# UC DRC
+# Deric (UC DRC)
 
 ## Dependencies
 
 ***Our Hyrax 2.x based app requires the following software to work:
-
 * Solr version >= 5.x (tested up to 6.2.0)
 * Fedora Commons digital repository version >= 4.5.1 (tested up to 4.6.0)
 * A SQL RDBMS (MySQL, PostgreSQL), though note that SQLite will be used by default if you're looking to get up and running quickly
@@ -46,7 +45,19 @@
 1. Run the test suite: ```bundle exec rake spec```
 
 ## Docker
-See [hyrax-docker readme](https://github.com/uclibs/hyrax-docker) for docker build/configuration.
+
+Deric includes a docker-compose file and Docker configuraiton to run the app in develop mode. Execute docker commands from the root of the application directory as follows:
+
+* Start the application: `docker-compose up -d`
+    > Note: Application will build automatically on initial start
+* List running Docker containers: `docker ps`
+* Inspect logs from a container: `docker logs <container name>`
+    > Note: add -f flag to stream the log
+* Run a command on a container by name: `docker exec -it <container name> <command>`
+* Attach to command line in a container: `docker exec -it <container name> bash`
+* Stop the application, retain data: `docker-compose down`
+* Stop the application, delete all data: `docker-compose down -v`
+* Rebuild the application after code/git branch changes (retains data): `docker-compose up -d --build`
 
 ## Project Samvera
 This software has been developed by and is brought to you by the Samvera community. Learn more at the
