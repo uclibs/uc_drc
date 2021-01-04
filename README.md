@@ -36,6 +36,8 @@
     * ```admin.users << User.find_by_user_key( "your_admin_users_email@fake.email.org" )```
     * ```admin.save```
     * Read [more](https://github.com/samvera/hyrax/wiki/Making-Admin-Users-in-Hyrax).
+1. Generate example/test users with roles ```bin/rails db:seed```
+    * Read [more](https://github.com/uclibs/uc_drc/blob/master/db/seeds.rb)
 
 ## Running the Tests
 1. Start fedora: ```fcrepo_wrapper -p 8986```
