@@ -40,6 +40,9 @@ if [ "$1" = 'server' ]; then
     echo "Initialize Default Admin Set"
     bundle exec rake hyrax:default_admin_set:create
 
+    echo "create default collection types"
+    bundle exec rake hyrax:default_collection_types:create
+
     echo "Starting the Rails Server"
     exec bundle exec rails s -b 0.0.0.0
 
