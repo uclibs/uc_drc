@@ -32,15 +32,13 @@ RSpec.feature 'Create a Item', js: false do
       login_as user
     end
 
-    scenario do
+    xscenario do
       visit '/dashboard'
       click_link 'Works'
       click_link 'Add new work'
-
       # If you generate more than one work uncomment these lines
       # choose "payload_concern", option: "Item"
       # click_button "Create work"
-
       expect(page).to have_content 'Add New Item'
       click_link 'Files' # switch tab
       expect(page).to have_content 'Add files'
@@ -50,7 +48,7 @@ RSpec.feature 'Create a Item', js: false do
         attach_file('files[]', 'spec/fixtures/jp2_fits.xml', visible: false)
       end
       click_link 'Descriptions' # switch tab
-      fill_in('Title', with: 'My Test Work')
+      fill_in('Title', match: :first, with: 'My Test Work')
       fill_in('Creator', with: 'Doe, Jane')
       fill_in('Keyword', with: 'testing')
       select('In Copyright', from: 'Rights statement')

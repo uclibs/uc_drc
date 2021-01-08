@@ -7,5 +7,6 @@ module Hyrax
   class ItemForm < Hyrax::Forms::WorkForm
     self.model_class = ::Item
     self.terms += [:resource_type]
+    include AllinsonFlex::DynamicFormBehavior
   end
 end

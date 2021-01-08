@@ -4,12 +4,27 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'vendor/**/*'
+    - 'node_modules/node-sass/src/libsass/contrib/libsass.spec'
+GlobalVars:
+  AllowedVariables:
+    - $CFLAGS
+    - $LIBS
 Layout/LineLength:
   Max: 181
+Metrics/AbcSize:
+  Exclude:
+    - 'bin/importer'
 Metrics/BlockLength:
   Max: 195
 Metrics/ClassLength:
   Max: 209
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/extensions/allinson_flex/prepend_permission_templates_controller.rb'
+    - 'bin/importer'
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'lib/extensions/allinson_flex/prepend_permission_templates_controller.rb'
 Style/ClassAndModuleChildren:
   Exclude:
     - 'app/models/qa/local_authority.rb'
@@ -32,9 +47,21 @@ Style/Documentation:
     - 'app/models/solr_document.rb'
     - 'app/models/user.rb'
     - 'config/application.rb'
+    - 'lib/extensions/allinson_flex/prepend_admin_set_form.rb'
+    - 'lib/extensions/allinson_flex/prepend_permission_template_form.rb'
+    - 'lib/extensions/allinson_flex/prepend_permission_templates_controller.rb'
+    - 'app/presenters/hyrax/item_presenter.rb'
+    - 'app/models/concerns/bulkrax/has_local_processing.rb'
 Style/MixinUsage:
   Exclude:
     - 'bin/setup'
     - 'bin/update'
     - 'spec/features/create_item_spec.rb'
-
+    - 'spec/features/allinson_flex_spec.rb'
+    - 'spec/features/bulkrax_spec.rb'
+Style/SoleNestedConditional:
+  Exclude:
+    - 'config/routes.rb'
+Style/StringConcatenation:
+  Exclude:
+    - 'config/initializers/sidekiq.rb'

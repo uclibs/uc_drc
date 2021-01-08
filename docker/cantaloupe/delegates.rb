@@ -176,7 +176,7 @@ class CustomDelegate
     fedora_base_url = 'http://fcrepo:8984/fcrepo/rest/dev'
 
     ## DCE: Add CGI Unescape
-    url = fedora_base_url + '/' + paths.join('/') + '/' + file_id
+    url = "#{fedora_base_url}/#{paths.join('/')}/#{file_id}"
     require 'cgi'
     CGI.unescape(url)
   end
