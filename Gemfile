@@ -85,13 +85,13 @@ end
 gem 'bootstrap-sass', '~> 3.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
+gem 'dotenv-rails'
 gem 'jquery-rails'
+gem 'riiif', '~> 2.0'
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 group :development, :test do
-  gem 'dotenv-rails'
   gem 'fcrepo_wrapper'
-  gem 'riiif', '~> 2.0'
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
 end

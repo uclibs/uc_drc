@@ -60,6 +60,7 @@ Deric includes a docker-compose file and Docker configuraiton to run the app in 
 * Stop the application, retain data: `docker-compose down`
 * Stop the application, delete all data: `docker-compose down -v`
 * Rebuild the application after code/git branch changes (retains data): `docker-compose up -d --build`
+* The application runs in development as default. To start the application in production mode, prepend the proper RAILS_ENV when starting docker: `RAILS_ENV=production docker-compose up -d --build`
 
 ## Project Samvera
 This software has been developed by and is brought to you by the Samvera community. Learn more at the
