@@ -23,7 +23,12 @@ if [ "$1" = 'server' ]; then
     fi
 
     echo "Copy over Docker env variables"
-    /bin/cp -f .env.development.docker .env.development.local
+    
+    if [$(hostname) = 'curly']; then
+      /bin/cp -f .env.development.docker.curly .env.development.local
+    else 
+      /bin/cp -f .env.development.docker .env.development.local
+    fi
 
     echo "Install bundler"
     gem install bundler:2.0.2
