@@ -23,8 +23,7 @@ if [ "$1" = 'server' ]; then
     fi
 
     echo "Copy over Docker env variables"
-    
-    if [$(hostname) = 'curly']; then
+    if [[ $(echo $DOCKER_HOST_HOSTNAME) = 'curly' ]]; then
       /bin/cp -f .env.development.docker.curly .env.development.local
     else 
       /bin/cp -f .env.development.docker .env.development.local
