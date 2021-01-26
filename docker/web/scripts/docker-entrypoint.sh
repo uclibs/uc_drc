@@ -48,6 +48,9 @@ if [ "$1" = 'server' ]; then
     echo "create default collection types"
     bundle exec rake hyrax:default_collection_types:create
 
+    echo "Load default metadata profile"
+    bundle exec rake metadata_profile:load_default
+
     echo "Starting the Rails Server"
     exec bundle exec rails s -b 0.0.0.0
 
