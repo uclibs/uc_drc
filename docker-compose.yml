@@ -16,6 +16,7 @@ services:
     environment:
       RAILS_ENV: development
       HYRAX_DB_HOST: db
+      DOCKER_HOST_HOSTNAME: $DOCKER_HOST_HOSTNAME
   worker:
     image: hyrax_web
     depends_on:
