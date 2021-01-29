@@ -75,7 +75,7 @@ services:
     volumes:
       - redis:/data
   solr:
-    build: docker/solr
+    build: solr
     ports:
       - "8983"
     volumes:
