@@ -88,8 +88,13 @@ elif [[ $1 = sidekiq* ]]; then
     exec bundle exec sidekiq -c 1
 
 elif [[ "$1" = 'test' ]]; then
+
+    echo "Copy over Docker env variables"
+    /bin/cp -f .env.test.docker .env.test.local
+
     echo "Checking and Installing Ruby Gems"
     bundle check || bundle install
+    bundle exec rails db:migrate RAILS_ENV=test
 
     echo "Running Tests"
     if [[ $# -eq 2 ]] ; then

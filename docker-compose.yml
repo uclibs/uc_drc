@@ -43,6 +43,15 @@ services:
       MYSQL_DATABASE: hyrax
     volumes:
       - mysqldata:/var/lib/mysql
+  db_test:
+    image: mysql:5
+    ports:
+      - "5433:3306"
+    environment:
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: hyrax
   fcrepo_db:
     image: mysql:5
     ports:
