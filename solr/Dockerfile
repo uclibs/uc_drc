@@ -1,4 +1,4 @@
-FROM solr:6.1
+FROM solr:7.1
 
 COPY config /opt/solr/server/solr/mycores/development
 COPY config /opt/solr/server/solr/mycores/test
