@@ -1,0 +1,5 @@
+<div class="form-inline">
+  <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE) %>
+  <%= f.input :private_archival_status, :label => 'Archival?', :value => true %>
+  <%= f.input :private_restriction_status, :label => 'Restricted?', :value => true %>
+</div>
