@@ -4,6 +4,8 @@ module Hydra
       # What these groups are called in the Hydra rights assertions:
       PERMISSION_TEXT_VALUE_PUBLIC = 'public'.freeze
       PERMISSION_TEXT_VALUE_AUTHENTICATED = 'registered'.freeze
+      PERMISSION_TEXT_VALUE_ARCHIVE = 'archive'.freeze
+
 
       # The values that get drawn to the page
       VISIBILITY_TEXT_VALUE_PUBLIC = 'open'.freeze
@@ -53,6 +55,7 @@ module Hydra
         return false if open_access?
         return false if authenticated_only?
         return false if open_access_with_embargo_release_date?
+    
         true
       end
 

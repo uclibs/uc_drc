@@ -33,7 +33,7 @@ module Hydra::AccessControls
         AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
       elsif read_groups.include? AccessRight::PERMISSION_TEXT_VALUE_AUTHENTICATED
         AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED
-      elseif read_groiups.includ? AccessRight::PERMISSION_TEXT_VALUE_ARCHIVE
+      elsif read_groups.include? AccessRight::PERMISSION_TEXT_VALUE_ARCHIVE
         AccessRight::VISIBILITY_TEXT_VALUE_ARCHIVE
       else
         AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE
@@ -57,7 +57,8 @@ module Hydra::AccessControls
       # @return [Array] a list of visibility types that are represented as read groups
       def represented_visibility
         [AccessRight::PERMISSION_TEXT_VALUE_AUTHENTICATED,
-         AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
+         AccessRight::PERMISSION_TEXT_VALUE_PUBLIC,
+         AccessRight::PERMISSION_TEXT_VALUE_ARCHIVE]
       end
 
       def public_visibility!
@@ -79,7 +80,12 @@ module Hydra::AccessControls
 
       def archive_visibility!
         visibility_will_change! unless visibility == AccessRight::VISIBILITY_TEXT_VALUE_ARCHIVE
-        set_read_groups([], represented_visibility!)
+        remove_groups = represented_visibility - [AccessRight::PERMISSION_TEXT_VALUE_ARCHIVE]
+        set_read_groups([AccessRight::PERMISSION_TEXT_VALUE_ARCHIVE], remove_groups)
+
+#        byebug
+#        visibility_will_change! unless visibility == AccessRight::VISIBILITY_TEXT_VALUE_ARCHIVE
+#        set_read_groups([], represented_visibility)
       end
   end
 end
