@@ -62,6 +62,12 @@ Deric includes a docker-compose file and Docker configuraiton to run the app in 
 * Rebuild the application after code/git branch changes (retains data): `docker-compose up -d --build`
 * The application runs in development as default. To start the application in production mode, prepend the proper RAILS_ENV when starting docker: `RAILS_ENV=production docker-compose up -d --build`
 
+### Run the application production mode  
+* `RAILS_ENV=production docker-compose up -d`  
+
+### Run spec tests in Docker  
+* `docker run web test`  
+
 ## Project Samvera
 This software has been developed by and is brought to you by the Samvera community. Learn more at the
 [Samvera website](http://projecthydra.org)
