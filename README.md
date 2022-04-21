@@ -36,6 +36,8 @@
     * ```admin.users << User.find_by_user_key( "your_admin_users_email@fake.email.org" )```
     * ```admin.save```
     * Read [more](https://github.com/samvera/hyrax/wiki/Making-Admin-Users-in-Hyrax).
+1. Set up profiles and classes: Open the app in a browser as Admin and navigate to the Hyrax Dashboard > Metadata Profiles and click Import Profile. 
+    * You can select the example profile in config/metadata_profile/hyrax.yaml
 1. Generate example/test users with roles ```bin/rails db:seed```
     * Read [more](https://github.com/uclibs/uc_drc/blob/master/db/seeds.rb)
 
